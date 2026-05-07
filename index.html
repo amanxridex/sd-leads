@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Social Daddy | Build Something Cool</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
 
     <div class="progress-container">
         <div class="progress-bar" id="progressBar"></div>
@@ -20,7 +24,7 @@
     <main id="app">
         <!-- STEP 1: INTRO -->
         <section class="step active" id="step-1">
-            <h1 class="animate-in">So… what are we building together? 👀</h1>
+            <h1 class="animate-in">So… what are we building together? <span class="emoji-bounce">👀</span></h1>
             <p class="subtext animate-in" style="animation-delay: 0.2s;">Answer a few quick questions. Takes less time than your last Instagram scroll.</p>
             <button class="btn animate-in btn-primary-animate" style="animation-delay: 0.4s;" onclick="nextStep()">Let’s Go →</button>
         </section>
@@ -33,11 +37,11 @@
                 <p class="input-hint">Your superhero/business name works too.</p>
             </div>
             <div class="input-group" style="display:none;" id="email-group">
-                <label>Where do we send the good stuff? 📩</label>
+                <label>Where do we send the good stuff? <span class="emoji-bounce">📩</span></label>
                 <input type="email" id="email" placeholder="you@somethingcool.com" autocomplete="email">
             </div>
             <div class="input-group" style="display:none;" id="phone-group">
-                <label>What’s your number? 😭</label>
+                <label>What’s your number? <span class="emoji-bounce">😭</span></label>
                 <input type="tel" id="phone" placeholder="+1 (555) 000-0000" autocomplete="tel">
                 <p class="input-hint">We promise no spam calls from "marketing experts".</p>
             </div>
@@ -47,7 +51,7 @@
         <!-- STEP 3: BUSINESS INFO -->
         <section class="step" id="step-3">
             <div class="input-group">
-                <label>Tell us about your brand baby 🚀</label>
+                <label>Tell us about your brand baby <span class="emoji-bounce">🚀</span></label>
                 <input type="text" id="brand" placeholder="Brand / Company Name">
             </div>
             <div class="input-group">
@@ -74,7 +78,7 @@
 
         <!-- STEP 4: SERVICES -->
         <section class="step" id="step-4">
-            <h1>What do you want Social Daddy to cook for you? 🍳</h1>
+            <h1>What do you want Social Daddy to cook for you? <span class="emoji-bounce">🍳</span></h1>
             <div class="options-grid" id="services-options">
                 <div class="option-card multi" onclick="toggleMultiOption('services', 'Social Media', this)">Social Media Handling</div>
                 <div class="option-card multi" onclick="toggleMultiOption('services', 'Content Creation', this)">Content Creation</div>
@@ -99,7 +103,7 @@
                 <div class="option-card" onclick="selectOption('goal', 'Viral', this)">Go Viral</div>
                 <div class="option-card" onclick="selectOption('goal', 'Premium', this)">Look Premium</div>
                 <div class="option-card" onclick="selectOption('goal', 'Automate', this)">Automate Operations</div>
-                <div class="option-card" onclick="selectOption('goal', 'Dominate', this)">Dominate Industry 😈</div>
+                <div class="option-card" onclick="selectOption('goal', 'Dominate', this)">Dominate Industry <span class="emoji-bounce">😈</span></div>
             </div>
             <div class="input-group" style="margin-top:30px;">
                 <label>Explain your vision in one line.</label>
@@ -110,7 +114,7 @@
 
         <!-- STEP 6: BUDGET -->
         <section class="step" id="step-6">
-            <h1>Let’s talk budget (we don’t judge 👀)</h1>
+            <h1>Let’s talk budget (we don’t judge <span class="emoji-bounce">👀</span>)</h1>
             <div class="options-grid">
                 <div class="option-card" onclick="selectOption('budget', 'Under 25k', this)">Under ₹25k</div>
                 <div class="option-card" onclick="selectOption('budget', '25k-50k', this)">₹25k – ₹50k</div>
@@ -131,14 +135,14 @@
                 <div class="option-card" onclick="selectOption('timeline', 'This Week', this)">This Week</div>
                 <div class="option-card" onclick="selectOption('timeline', 'This Month', this)">This Month</div>
                 <div class="option-card" onclick="selectOption('timeline', 'Exploring', this)">Just Exploring</div>
-                <div class="option-card" onclick="selectOption('timeline', 'Investor', this)">Waiting For Investor Money 😭</div>
+                <div class="option-card" onclick="selectOption('timeline', 'Investor', this)">Waiting For Investor Money <span class="emoji-bounce">😭</span></div>
             </div>
             <button class="btn" onclick="nextStep()">Continue →</button>
         </section>
 
         <!-- STEP 8: SOCIALS -->
         <section class="step" id="step-8">
-            <h1>Drop your socials. We’re stalking you 👀</h1>
+            <h1>Drop your socials. We’re stalking you <span class="emoji-bounce">👀</span></h1>
             <div class="input-group">
                 <input type="text" id="social-ig" placeholder="Instagram URL">
             </div>
@@ -153,14 +157,14 @@
 
         <!-- STEP 9: FINAL -->
         <section class="step" id="step-9">
-            <h1>Okayyyy. This could actually be huge. 🚀</h1>
+            <h1>Okayyyy. This could actually be huge. <span class="emoji-bounce">🚀</span></h1>
             <p class="subtext">Our team’s gonna review everything and get back to you with ideas, strategy & next steps.</p>
             <button class="btn" onclick="submitForm()">SEND TO SOCIAL DADDY →</button>
         </section>
 
         <!-- SUCCESS SCREEN -->
         <section class="step" id="step-success">
-            <h1>You’re officially on our radar now 😎</h1>
+            <h1>You’re officially on our radar now <span class="emoji-bounce">😎</span></h1>
             <p class="subtext">Someone from Social Daddy will reach out soon. Until then… keep being iconic.</p>
             <button class="btn btn-secondary" onclick="location.reload()">Back To Website</button>
         </section>
