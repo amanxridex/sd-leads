@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Social Daddy | Build Something Cool</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="progress-text" id="progressText">Getting to know you...</div>
+
+    <main id="app">
+        <!-- STEP 1: INTRO -->
+        <section class="step active" id="step-1">
+            <h1 class="animate-in">So… what are we building together? 👀</h1>
+            <p class="subtext animate-in" style="animation-delay: 0.2s;">Answer a few quick questions. Takes less time than your last Instagram scroll.</p>
+            <button class="btn animate-in btn-primary-animate" style="animation-delay: 0.4s;" onclick="nextStep()">Let’s Go →</button>
+        </section>
+
+        <!-- STEP 2: BASIC DETAILS -->
+        <section class="step" id="step-2">
+            <div class="input-group">
+                <label>First things first — what should we call you?</label>
+                <input type="text" id="name" placeholder="Your name" autocomplete="name">
+                <p class="input-hint">Your superhero/business name works too.</p>
+            </div>
+            <div class="input-group" style="display:none;" id="email-group">
+                <label>Where do we send the good stuff? 📩</label>
+                <input type="email" id="email" placeholder="you@somethingcool.com" autocomplete="email">
+            </div>
+            <div class="input-group" style="display:none;" id="phone-group">
+                <label>What’s your number? 😭</label>
+                <input type="tel" id="phone" placeholder="+1 (555) 000-0000" autocomplete="tel">
+                <p class="input-hint">We promise no spam calls from "marketing experts".</p>
+            </div>
+            <button class="btn" id="step-2-next" onclick="handleStep2()">Continue →</button>
+        </section>
+
+        <!-- STEP 3: BUSINESS INFO -->
+        <section class="step" id="step-3">
+            <div class="input-group">
+                <label>Tell us about your brand baby 🚀</label>
+                <input type="text" id="brand" placeholder="Brand / Company Name">
+            </div>
+            <div class="input-group">
+                <label>What are you building?</label>
+                <div class="options-grid" id="building-options">
+                    <div class="option-card" onclick="selectOption('building', 'Personal Brand', this)">Personal Brand</div>
+                    <div class="option-card" onclick="selectOption('building', 'Startup', this)">Startup</div>
+                    <div class="option-card" onclick="selectOption('building', 'E-commerce', this)">E-commerce</div>
+                    <div class="option-card" onclick="selectOption('building', 'Real Estate', this)">Real Estate</div>
+                    <div class="option-card" onclick="selectOption('building', 'Restaurant/Cafe', this)">Restaurant/Cafe</div>
+                    <div class="option-card" onclick="selectOption('building', 'Clothing', this)">Clothing Brand</div>
+                    <div class="option-card" onclick="selectOption('building', 'Agency', this)">Agency</div>
+                    <div class="option-card" onclick="selectOption('building', 'Creator', this)">Creator/Influencer</div>
+                    <div class="option-card" onclick="selectOption('building', 'Other', this)">Something Crazy</div>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Where are you based?</label>
+                <input type="text" id="location" placeholder="City + Country">
+                <p class="input-hint">Don’t worry, we work worldwide.</p>
+            </div>
+            <button class="btn" onclick="nextStep()">Continue →</button>
+        </section>
+
+        <!-- STEP 4: SERVICES -->
+        <section class="step" id="step-4">
+            <h1>What do you want Social Daddy to cook for you? 🍳</h1>
+            <div class="options-grid" id="services-options">
+                <div class="option-card multi" onclick="toggleMultiOption('services', 'Social Media', this)">Social Media Handling</div>
+                <div class="option-card multi" onclick="toggleMultiOption('services', 'Content Creation', this)">Content Creation</div>
+                <div class="option-card multi" onclick="toggleMultiOption('services', 'Video Editing', this)">Video Editing</div>
+                <div class="option-card multi" onclick="toggleMultiOption('services', 'Meta Ads', this)">Meta Ads</div>
+                <div class="option-card multi" onclick="toggleMultiOption('services', 'Branding', this)">Branding</div>
+                <div class="option-card multi" onclick="toggleMultiOption('services', 'Web Dev', this)">Website Dev</div>
+                <div class="option-card multi" onclick="toggleMultiOption('services', 'App Dev', this)">App Dev</div>
+                <div class="option-card multi" onclick="toggleMultiOption('services', 'Shopify', this)">Shopify Store</div>
+                <div class="option-card multi" onclick="toggleMultiOption('services', 'AI Automations', this)">AI Automations</div>
+                <div class="option-card multi" onclick="toggleMultiOption('services', 'Lead Gen', this)">Lead Generation</div>
+            </div>
+            <button class="btn" onclick="nextStep()" style="margin-top:30px;">This looks good →</button>
+        </section>
+
+        <!-- STEP 5: GOALS -->
+        <section class="step" id="step-5">
+            <h1>What’s the dream here?</h1>
+            <div class="options-grid">
+                <div class="option-card" onclick="selectOption('goal', 'Leads', this)">Get More Leads</div>
+                <div class="option-card" onclick="selectOption('goal', 'Sales', this)">Increase Sales</div>
+                <div class="option-card" onclick="selectOption('goal', 'Viral', this)">Go Viral</div>
+                <div class="option-card" onclick="selectOption('goal', 'Premium', this)">Look Premium</div>
+                <div class="option-card" onclick="selectOption('goal', 'Automate', this)">Automate Operations</div>
+                <div class="option-card" onclick="selectOption('goal', 'Dominate', this)">Dominate Industry 😈</div>
+            </div>
+            <div class="input-group" style="margin-top:30px;">
+                <label>Explain your vision in one line.</label>
+                <textarea id="vision" rows="1" placeholder="We want to become the go-to luxury..."></textarea>
+            </div>
+            <button class="btn" onclick="nextStep()">Continue →</button>
+        </section>
+
+        <!-- STEP 6: BUDGET -->
+        <section class="step" id="step-6">
+            <h1>Let’s talk budget (we don’t judge 👀)</h1>
+            <div class="options-grid">
+                <div class="option-card" onclick="selectOption('budget', 'Under 25k', this)">Under ₹25k</div>
+                <div class="option-card" onclick="selectOption('budget', '25k-50k', this)">₹25k – ₹50k</div>
+                <div class="option-card" onclick="selectOption('budget', '50k-1L', this)">₹50k – ₹1L</div>
+                <div class="option-card" onclick="selectOption('budget', '1L-3L', this)">₹1L – ₹3L</div>
+                <div class="option-card" onclick="selectOption('budget', '3L+', this)">₹3L+</div>
+                <div class="option-card" onclick="selectOption('budget', 'Guidance', this)">Need guidance</div>
+            </div>
+            <p class="input-hint" style="margin-top:20px;">Good marketing costs less than bad marketing.</p>
+            <button class="btn" onclick="nextStep()">Continue →</button>
+        </section>
+
+        <!-- STEP 7: TIMELINE -->
+        <section class="step" id="step-7">
+            <h1>When are we starting this glow-up?</h1>
+            <div class="options-grid">
+                <div class="option-card" onclick="selectOption('timeline', 'ASAP', this)">ASAP</div>
+                <div class="option-card" onclick="selectOption('timeline', 'This Week', this)">This Week</div>
+                <div class="option-card" onclick="selectOption('timeline', 'This Month', this)">This Month</div>
+                <div class="option-card" onclick="selectOption('timeline', 'Exploring', this)">Just Exploring</div>
+                <div class="option-card" onclick="selectOption('timeline', 'Investor', this)">Waiting For Investor Money 😭</div>
+            </div>
+            <button class="btn" onclick="nextStep()">Continue →</button>
+        </section>
+
+        <!-- STEP 8: SOCIALS -->
+        <section class="step" id="step-8">
+            <h1>Drop your socials. We’re stalking you 👀</h1>
+            <div class="input-group">
+                <input type="text" id="social-ig" placeholder="Instagram URL">
+            </div>
+            <div class="input-group">
+                <input type="text" id="social-web" placeholder="Website URL">
+            </div>
+            <div class="input-group">
+                <input type="text" id="social-li" placeholder="LinkedIn URL">
+            </div>
+            <button class="btn" onclick="nextStep()">Almost done →</button>
+        </section>
+
+        <!-- STEP 9: FINAL -->
+        <section class="step" id="step-9">
+            <h1>Okayyyy. This could actually be huge. 🚀</h1>
+            <p class="subtext">Our team’s gonna review everything and get back to you with ideas, strategy & next steps.</p>
+            <button class="btn" onclick="submitForm()">SEND TO SOCIAL DADDY →</button>
+        </section>
+
+        <!-- SUCCESS SCREEN -->
+        <section class="step" id="step-success">
+            <h1>You’re officially on our radar now 😎</h1>
+            <p class="subtext">Someone from Social Daddy will reach out soon. Until then… keep being iconic.</p>
+            <button class="btn btn-secondary" onclick="location.reload()">Back To Website</button>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
