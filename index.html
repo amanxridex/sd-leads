@@ -166,7 +166,36 @@
         <section class="step" id="step-success">
             <h1>You’re officially on our radar now <span class="emoji-bounce">😎</span></h1>
             <p class="subtext">Someone from Social Daddy will reach out soon. Until then… keep being iconic.</p>
-            <button class="btn btn-secondary" onclick="location.reload()">Back To Website</button>
+            
+            <!-- Stacked Cards Section -->
+            <div class="card-stack-container">
+                <div class="card-stack">
+                    <div class="stack-card" onclick="window.location.href='https://socialdaddy.io'">
+                        <div class="card-tag">Who we are</div>
+                        <h3>The team powering SD ⚡️</h3>
+                        <p>A collective of rebels, creators, and growth hackers.</p>
+                    </div>
+                    <div class="stack-card" onclick="window.location.href='https://socialdaddy.io'">
+                        <div class="card-tag">Our Work</div>
+                        <h3>What we did? 🏆</h3>
+                        <p>Scaled brands from zero to viral in weeks.</p>
+                    </div>
+                    <div class="stack-card" onclick="window.location.href='https://socialdaddy.io'">
+                        <div class="card-tag">Presence</div>
+                        <h3>Where we are? 📍</h3>
+                        <p>Based in the cloud, working worldwide.</p>
+                    </div>
+                    <div class="stack-card" onclick="window.location.href='https://socialdaddy.io'">
+                        <div class="card-tag">Services</div>
+                        <h3>What we do? 🛠️</h3>
+                        <p>We build growth machines for modern brands.</p>
+                    </div>
+                </div>
+                <div class="swipe-hint">Swipe or Click edges to see more →</div>
+                <button class="btn btn-secondary" style="margin-top:20px; font-size: 0.9rem; padding: 10px 20px;" onclick="rotateStack()">Next Card</button>
+            </div>
+
+            <button class="btn btn-secondary" style="margin-top:40px;" onclick="location.reload()">Back To Website</button>
         </section>
 
     </main>

@@ -150,11 +150,39 @@ document.addEventListener('keypress', (e) => {
     }
 });
 
-// Auto-expand textarea
-const textarea = document.getElementById('vision');
-if (textarea) {
-    textarea.addEventListener('input', function() {
-        this.style.height = 'auto';
-        this.style.height = (this.scrollHeight) + 'px';
-    });
+// Card Stack Logic
+function rotateStack() {
+    const stack = document.querySelector('.card-stack');
+    if (stack) {
+        const firstCard = stack.firstElementChild;
+        stack.appendChild(firstCard);
+    }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const stack = document.querySelector('.card-stack');
+    if (stack) {
+        let startX = 0;
+        stack.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        stack.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            if (Math.abs(startX - endX) > 50) {
+                rotateStack();
+            }
+        });
+    }
+});
+
+// Auto-expand textarea
+document.addEventListener('DOMContentLoaded', () => {
+    const textarea = document.getElementById('vision');
+    if (textarea) {
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+    }
+});
