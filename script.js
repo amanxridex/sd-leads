@@ -39,6 +39,7 @@ function nextStep() {
         if (nextElem) {
             nextElem.classList.add('active');
             updateProgress();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             
             // Auto-focus first input if exists
             const firstInput = nextElem.querySelector('input');
